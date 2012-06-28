@@ -23,18 +23,26 @@ public partial class MainWindow: Gtk.Window
 
 		if (String.IsNullOrEmpty(user)) {
 			Console.WriteLine("Please specify a user name");
-		} else
+		}
+		else
 		{
-			// Create a 'WebRequest' object with the specified url. 
-			WebRequest myWebRequest = WebRequest.Create(userURL); 
-			// Send the 'WebRequest' and wait for response.
-			WebResponse myWebResponse = myWebRequest.GetResponse(); 
-			using (var streamReader = new StreamReader(myWebResponse.GetResponseStream()))
+			try 
 			{
-				var responseText = streamReader.ReadToEnd();
-				//Now you have your response.
-				//or false depending on information in the response 
-				lblVerificationText.Text = responseText;
+				// Create a 'WebRequest' object with the specified url. 
+				WebRequest myWebRequest = WebRequest.Create(userURL); 
+				// Send the 'WebRequest' and wait for response.
+				WebResponse myWebResponse = myWebRequest.GetResponse(); 
+				// get the response
+				using (var streamReader = new StreamReader(myWebResponse.GetResponseStream()))
+				{
+					var responseText = streamReader.ReadToEnd();
+					// Now you have your response or false depending on information in the response 
+					lblVerificationText.Text = responseText;
+				}
+			}
+			catch (Exception)
+			{
+				lblVerificationText.Text = "User does not exist";
 			}
 		}
 	}

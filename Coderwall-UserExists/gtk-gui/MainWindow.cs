@@ -7,7 +7,7 @@ public partial class MainWindow
 	private global::Gtk.Label label1;
 	private global::Gtk.Entry txtUser;
 	private global::Gtk.Button button1;
-	private global::Gtk.Image image22;
+	private global::Gtk.Image imgExists;
 	private global::Gtk.ScrolledWindow GtkScrolledWindow;
 	private global::Gtk.Label lblVerificationText;
 	
@@ -53,10 +53,10 @@ public partial class MainWindow
 		w3.Expand = false;
 		w3.Fill = false;
 		// Container child vbox1.Gtk.Box+BoxChild
-		this.image22 = new global::Gtk.Image ();
-		this.image22.Name = "image22";
-		this.vbox1.Add (this.image22);
-		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.image22]));
+		this.imgExists = new global::Gtk.Image ();
+		this.imgExists.Name = "imgExists";
+		this.vbox1.Add (this.imgExists);
+		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.imgExists]));
 		w4.Position = 3;
 		w4.Expand = false;
 		w4.Fill = false;

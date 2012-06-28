@@ -8,6 +8,18 @@
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../bin/Debug/Coderwall-UserExists.exe" internal="true" />
   </import>
+  <icon-factory>
+    <icon-set id="found">
+      <source>
+        <property name="Image">stock:gtk-apply Menu</property>
+      </source>
+    </icon-set>
+    <icon-set id="notfound">
+      <source>
+        <property name="Image">stock:gtk-cancel Menu</property>
+      </source>
+    </icon-set>
+  </icon-factory>
   <widget class="Gtk.Window" id="MainWindow" design-size="647 492">
     <property name="MemberName" />
     <property name="Title" translatable="yes">Coderwall User Verification</property>
@@ -61,7 +73,7 @@ Please enter user's id below and select the Verify button to check to see if the
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Image" id="image22">
+          <widget class="Gtk.Image" id="imgExists">
             <property name="MemberName" />
           </widget>
           <packing>
